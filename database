@@ -1,0 +1,27 @@
+/*  */ 
+
+cd mysql
+/* we have to first go into our sql folder from our root. */ 
+
+cd bin
+/* Got into your Bin Repo */
+
+mysql –u root –p –h localhost
+
+Create database STORE;
+/* create a database called STORE.*/
+
+CREATE TABLE `store`.`Movies` ( `Movie ID` INT NOT NULL , `Movie Title` INTNOT NULL , `Movie Release Year` INT NOT NULL , `Movie Language` INT NOT NULL )ENGINE = InnoDB;
+/* inside this database we will create a table called movies with 4 columns. */
+
+ALTER TABLE `movies` DROP `Movie Language`;
+/* this is how we delete a column */ 
+
+ALTER TABLE `movies` ADD `Movie Length` INT NOT NULL AFTER `Movie Language`;
+/*this is how we add a column */
+
+INSERT INTO `movies` (`Movie ID`, `Movie Title`, `Movie Release Year`, `Movie Language`, `Movie Length`) VALUES ('3232', '23343', '3234', '3343', '343143');
+/* here we are inputting values into the columns */
+
+ALTER TABLE `movies` CHANGE `Movie ID` `Movie ID` TEXT NOT NULL AUTO_INCREMENT;
+/* This will help us change movie ID from inputting integers into inputting text. */
